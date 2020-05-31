@@ -21,7 +21,8 @@ object Utils {
      */
     @JvmStatic
     fun isConnectedToInternet(context: Context): Boolean {
-        val connectivityManager = context.getSystemService(Context.CONNECTIVITY_SERVICE) as ConnectivityManager
+        val connectivityManager =
+            context.getSystemService(Context.CONNECTIVITY_SERVICE) as ConnectivityManager
         var result = false
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M) {
             val networkCapabilities = connectivityManager.activeNetwork ?: return false
@@ -77,7 +78,7 @@ object Utils {
 
             urlConnection.responseCode == 200
         } catch (e: IOException) {
-            Log.e("Offline Utils",e.localizedMessage)
+            Log.e("Offline Utils", e.localizedMessage)
             e.printStackTrace()
             false
         }
@@ -89,7 +90,9 @@ object Utils {
     @JvmStatic
     fun turnOnMobileData(context: Context) {
         try {
-            context.startActivity(Intent(Settings.ACTION_SETTINGS))
+            val intent = Intent(Settings.ACTION_SETTINGS)
+            intent.flags = Intent.FLAG_ACTIVITY_NEW_TASK
+            context.startActivity(intent)
         } catch (e: ActivityNotFoundException) {
             Toast.makeText(context, "It cannot open settings!", Toast.LENGTH_LONG).show()
         }
@@ -101,7 +104,10 @@ object Utils {
     @JvmStatic
     fun turnOnWifi(context: Context) {
         try {
-            context.startActivity(Intent(Settings.ACTION_WIFI_SETTINGS))
+            val intent = Intent(Settings.ACTION_WIFI_SETTINGS)
+            intent.flags = Intent.FLAG_ACTIVITY_NEW_TASK
+            context.startActivity(intent)
+            context.startActivity(intent)
         } catch (e: ActivityNotFoundException) {
             Toast.makeText(context, "It cannot open settings!", Toast.LENGTH_LONG).show()
         }
@@ -113,7 +119,9 @@ object Utils {
     @JvmStatic
     fun turnOffAirplaneMode(context: Context) {
         try {
-            context.startActivity(Intent(Settings.ACTION_AIRPLANE_MODE_SETTINGS))
+            val intent = Intent(Settings.ACTION_AIRPLANE_MODE_SETTINGS)
+            intent.flags = Intent.FLAG_ACTIVITY_NEW_TASK
+            context.startActivity(intent)
         } catch (e: ActivityNotFoundException) {
             Toast.makeText(context, "It cannot open settings!", Toast.LENGTH_LONG).show()
         }
@@ -154,9 +162,9 @@ object Utils {
                 return false
             }
         }
-        return return if (result){
+        return return if (result) {
             hasActiveInternetConnection()
-        }else{
+        } else {
             result
         }
     }
