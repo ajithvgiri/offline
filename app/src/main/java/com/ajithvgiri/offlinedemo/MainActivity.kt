@@ -15,8 +15,7 @@ class MainActivity : AppCompatActivity() {
 
     override fun onResume() {
         super.onResume()
-        noInternetConnectionSnackBar =
-            NoInternetConnectionBuilder(applicationContext, findViewById(android.R.id.content)).build()
+        noInternetConnectionSnackBar = NoInternetConnectionBuilder(applicationContext, findViewById(android.R.id.content)).build()
     }
 
     override fun onDestroy() {
