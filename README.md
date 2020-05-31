@@ -57,7 +57,7 @@ add below code in your activity
     }
 ```
 ### Screenshots
-![Screenshots](https://i.imgur.com/Ugnqfp4.jpg)
+![Screenshots](https://i.imgur.com/MrMXc7d.jpg)
 
 # Credits
 This library is inspired by [Oops No Internet](https://github.com/ImaginativeShohag/Oops-No-Internet).
