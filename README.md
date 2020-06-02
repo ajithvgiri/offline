@@ -1,6 +1,7 @@
 ![Offline](https://i.imgur.com/Ydf9oKl.png?2)
 Offline is a android library,which is used to indicate the user is turned off internet or turned on airplane mode. This library can be used with few lines of code and saves your precious time
 # Demo
+<a href="https://play.google.com/store/apps/details?id=com.ajithvgiri.offlinedemo"><img alt="Get it on Google Play" src="https://play.google.com/intl/en_us/badges/images/generic/en_badge_web_generic.png" width="185" height="70"/></a>
 
 # Setup
 ##### 1. Provide the gradle dependency
